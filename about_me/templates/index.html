@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block header %}
+Все сотрудники
+{% endblock %}
+
+{% block content %}
+  {% for employee in employees %}
+    {{ employee }} <br>
+  {% empty %}
+    Нет сотрудников
+  {% endfor %}
+{% endblock %}

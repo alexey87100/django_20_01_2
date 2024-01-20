@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница сотрудника {{ employee.name }}
+{% endblock %}
+
+{% block header %}
+Страница сотрудника {{ employee.name }}
+{% endblock %}
+
+{% block content %}
+  <ul>
+    <li>Имя - {{ employee.name }} </li>
+    <li>Возраст - {{ employee.age }} </li>
+    <li>
+      <ul>
+        {% for skill in employee.skills %}
+          <li>{{ skill }}</li>
+        {% empty %}
+          <li>У сотрудника нет навыков </li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+  {% if employee.age > 30 %}
+    Сотруднику больше 30
+  {% elif employee.age == 30 %}
+    Сотруднику 30 лет ровно
+  {% else %}
+    Сотруднику меньше 30
+  {% endif %}
+{% endblock %}

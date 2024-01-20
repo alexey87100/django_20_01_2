@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <title>
+      {% block title %}
+      Дефолтный title страницы
+      {% endblock title %}
+    </title>
+  </head>
+  <body>
+
+    <h1 align="center">
+      {% block header %}
+      Тут будет заголовок страницы
+      {% endblock header %}
+    </h1>
+
+    {% block content %}
+    Тут будет контент страницы
+    {% endblock %}
+
+    </body>
+</html>
